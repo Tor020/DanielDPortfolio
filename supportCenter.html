@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Daniel Beaver - Portfolio Project: Support Center 3</title>
+  <script type="text/javascript" src="https://tor020.github.io/livejs/live.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar is-fixed-top is-dark">
+
+    <div class="container">
+
+      <div class="navbar-brand">
+
+        <div class="navbar-burger burger" data-target="navigationForMobile">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navigationForMobile" class="navbar-menu">
+
+        <div class="navbar-start">
+          <a class="navbar-item" href="index.html">
+            <strong>Home</strong>
+          </a>
+          <a class="navbar-item" href="about.html">
+            <strong>About</strong>
+          </a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" href="#">
+              <strong>Projects</strong>
+            </a>
+
+            <div class="navbar-dropdown is-boxed">
+              <a class="navbar-item" href="supportCenter.html">Support Center 3</a>
+              <a class="navbar-item" href="sylvaBot.html">Sylva Bot</a>
+              <a class="navbar-item" href="houstonGame.html">Houston Game</a>
+              <a class="navbar-item" href="mapToolCharacterSheet.html">Maptool Character Sheet</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero is-medium is-dark is-bold">
+
+    <div class="hero-body">
+
+      <div class="container">
+
+        <div class="columns">
+
+          <div class="column is-3"></div>
+
+          <div class="column is-6">
+            <h1 class="title cent-Text">Support Center 3</h1>
+            <h2 class="subtitle is-5 cent-Text"></h2>
+          </div>
+        </div>
+
+        <div class="columns">
+
+          <div class="column is-2"></div>
+
+          <div class="column is-8">
+            <p>
+              I created this application at my previous job due to issues I was having with our system. I was not given database access,
+              and used Javascript to simulate a login and parse all data on the server. This was then stored in a text file;
+              I was not using SQL at the time, and it is all loaded actively into memory. For a 'database' of this size,
+              it caused no problems, and was very fast. I also included a few features that were not in the original interface,
+              such as automatically running pings on a hotel's equipment when a site is opened.</p>
+          </div>
+
+        </div>
+        <!-- <nav class="level"><div class="level-item"></div></nav> -->
+
+
+      </div>
+      <!-- Container End -->
+    </div>
+    <!-- Hero-Body End -->
+
+  </section>
+
+  <section>
+    <hr>
+
+    <div class="columns">
+
+      <div class="column is-2"></div>
+
+      <div class="column is-8">
+
+        <div class="content">
+          <h2>Features</h2>
+          <ul>
+            <li>Duplicated our existing database without database access, by querying our webserver and storing the information</li>
+            <li>Allowed faster viewing of information by caching the database locally</li>
+            <li>Automatically updated local database upon reaching webserver and finding newer information</li>
+            <li>Fully replaced all functions of existing webserver, including ticket entry, which was sent through the webserver with javascript</li>
+            <li>Interfaced existing database with PRTG, a third party software that monitors network equipment.  This included dealing with name discrepancies, as the systems were not linked</li>
+            <li>Included many helpful troubleshooting tools, such as automatic pings to equipment, and massively sped up various tests compared to using the webserver</li>
+            <li>Allowed users to login to equipment with one click, without having to enter credentials</li>
+          </ul>
+
+          <h2>Here's a GIF showing most of the features on a test site</h2>
+          <figure class="image">
+            <img src="images\SC3ExampleFull.gif">
+          </figure>
+
+        </div>
+        <!--Content End-->
+      </div>
+      <!--Column is-8 End-->
+    </div>
+    <!--Columns grouping End-->
+
+    <div class="columns">
+
+      <div class="column is-2"></div>
+
+      <div class="column is-8">
+
+        <div class="content">
+          <h2>Challenges</h2>
+          <ul>
+            <li>No database access - without access to the database, I had to create my own, basically. I used javascript to login to our system through a virtual browser. I then found that if I disable javascript on this 'browser', I could view the entire property list on one page. I used this to get phone numbers (a unique identifier). Once I had this list, I could run searches through our old system using this list and save data from each entry. I stored all of this in objects, and once it was finished I serialized them all and saved to a text file. The process took many hours to run initially.</li>
+            <li>Potentially outdated information - Once I had this records file, upon startup if the file was detected, it did not parse the entire database again since it takes so long. In order to make sure information was updated, each time a page is loaded in the software it reaches out to the original system and tries to open the page to update the record. Once it has reached the page it refreshes the software view and shows the new information. If this is used regularly, the changes will generally be minor or obvious, and the initial information is displayed until the page is updated - this means the technicians can begin troubleshooting immediately even if there were minor changes to the system. Also, if the changes were major, generally the old information will all show offline and it will be clear that updates are pending - and generally within 5-10 seconds the page would refresh and show the new information</li>
+            <li>Too much information - During the parsing process, I only took the basic and most important information from each site, but I did not gather Tickets, because each site has hundreds and this would have been too much to parse. As you can see in the GIF, it takes quite a while to load tickets - this is indicative of the speed of the legacy system. When a site loads in my software, it attempts to load information from the legacy site from the list of tickets for the property. When a specific ticket is expanded, it then tries to load that specific ticket. Loading all of this information without it being requested would be inefficient, but unfortunately this means there is still a delay when trying to view a ticket. This was necessary because there is no way to view ticket details for more than one ticket at a time in the legacy system</li>
+            <li>Pinging - You can see in the GIF I have pings to Google, ToS (the employer's terms of service page), and in the bottom left Modem and GW. These were very difficult to implement because pinging is generally OS-specific, and Java by definition is not. This means the program only works properly on Windows, at the moment</li>
+            <li>Multithreading - This was a challenge because so many things are loaded when a property is opened, they had to be multithreaded. Additionally, when a property is loaded it checks the status of all equipment, which also had to be multithreaded. I had to refactor the program at one point to ensure all multithreaded instances can be run synchronously without any issues. I could not multi-thread the initial parsing process, however, because this would require multiple simultaneous logins to the legacy system which it did not allow</li>
+            <li>Layout - Java is special, and its layouts are ... not very fun. I still did not end up with it looking exactly how I wanted, but it scales well with window sizing and the GUI was basically 'good enough' for me at the time. This was developed in 2014 and I now have higher standards for front-end design</li>
+            <li>Auto-generated legacy system - Probably the toughest challenge was finding ways to reference the fields I needed from the legacy system, because it was auto-generated. This means sometimes the field I wanted had a random text string as a class, name, or ID - or sometimes it was arbitrary, like with tickets. I had to put a lot of effort into workarounds for many of these, or ways to detect the information without knowing the element it is in, particularly with tickets</li>
+            <li>Bugs - But not just mine. In the legacy software there were many unpredictable bugs that would sometimes cause accessing a page to fail repeatedly for a period of time. This is why I included a metric to show successes vs attempts; I found a way of accessing the pages that was reliable using this along with some retry attempts.</li>
+            <li>Poor Design - Yes, this time mine. I initially displayed responses by printing to console, not realizing that an actual user would expect the text to output in the 'window' for the software. I found a way to hook the system.out stream and write a custom display function for it instead of replacing all instances where I'd used it</li>
+          </ul>
+        </div>
+        <!--Content End-->
+      </div>
+      <!--Column is-8 End-->
+    </div>
+    <!--Columns grouping End-->
+  </section>
+  <hr class="hr-reduce">
+
+  <nav class="level">
+    <p class="level-item has-text-centered">
+      <a href ="supportCenter.html" class="link is-info level-active">Support Center 3</a>
+    </p>
+    <p class="level-item has-text-centered">
+      <a href ="sylvaBot.html" class="link is-info">Sylva Bot</a>
+    </p>
+    <p class="level-item has-text-centered title is-2">
+      Projects
+    </p>
+    <p class="level-item has-text-centered">
+      <a href ="houstonGame.html" class="link is-info">Houston Game</a>
+    </p>
+    <p class="level-item has-text-centered">
+      <a href ="mapToolCharacterSheet.html" class="link is-info">Maptool Character Sheet</a>
+    </p>
+  </nav>
+
+  <div class="container">
+
+    <div class="columns">
+
+      <!-- Card 1 -->
+
+      <div class="column is-4">
+
+        <div class="card">
+
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <a href="sylvaBot.html">
+                <img src="images/SylvaBotExample.jpg" alt="Placeholder image"> </a>
+            </figure>
+          </div>
+
+          <div class="card-content">
+
+            <div class="media">
+
+              <div class="media-content">
+                <p class="title is-4">Sylva Bot</p>
+              </div>
+            </div>
+
+            <div class="content">
+              This was a chat moderation bot created for a client and actively updated with requests. It used multiple online services
+              such as Discord, Twitter, Twitch, and others.
+              <br> Built with:
+              <strong> Java</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2-->
+
+      <div class="column is-4">
+
+        <div class="card">
+
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <a href="houstonGame.html">
+                <img src="images/houstonExample1.jpg" alt="Placeholder image"> </a>
+            </figure>
+          </div>
+
+          <div class="card-content">
+
+            <div class="media">
+
+              <div class="media-content">
+                <p class="title is-4">Houston Game</p>
+              </div>
+            </div>
+
+            <div class="content">
+              A simple game in progress made with Unity; the idea is that one player controls a spaceship with basically no instrumentation,
+              while the other player provides instructions over voice from the control center.
+              <br> Built with:
+              <strong> C#</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+
+      <div class="column is-4">
+
+        <div class="card">
+
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <a href="mapToolCharacterSheet.html">
+                <img src="images/CharSheetExample1.jpg" alt="Placeholder image"> </a>
+            </figure>
+          </div>
+
+          <div class="card-content">
+
+            <div class="media">
+
+              <div class="media-content">
+                <p class="title is-4">Maptool Character Sheet</p>
+              </div>
+            </div>
+
+            <div class="content">
+              This is a character sheet designed for an online tabletop simulator. This is worth mentioning only because I managed to get
+              a lot out of a very weak custom programming language that it uses, and it is very interactive.
+              <br> Built with:
+              <strong> MaptoolMacro and HTML/CSS</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- Columns 2 End -->
+  </div>
+  <!-- Container End -->
+
+  <hr class="hr-reduce">
+
+  <div class="container m-t-xl">
+
+    <div class="columns">
+
+      <div class="column is-2"></div>
+
+      <div class="column is-8 cent-Text"><a class="link-To-About" href="about.html">Read More About Me</a></div>
+
+    </div>
+  </div>
+
+  <footer class="footer m-t-md dark-footer">
+
+    <div class="container">
+
+      <div class="cent-Text">
+        <p class='subtitle'> Contact </p>
+
+        <a href="mailto:Dimencia@gmail.com" class="button is-dark" target="_blank">Send Me an E-mail</a><br>
+        <!-- insert link to linked in inside of href -->
+        <span class="icon m-t-md"><a href="https://www.linkedin.com/in/dimencia/"><i class="fa fa-linkedin"></i></a></span>
+
+
+
+      </div>
+    </div>
+  </footer>
+
+
+  <script src='scripts/main.js'></script>
+
+</body>
+
+</html>

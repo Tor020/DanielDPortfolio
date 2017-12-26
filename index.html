@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" class = "has-navbar-fixed-top">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Daniel Beaver Portfolio</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+  <script type="text/javascript" src="https://tor020.github.io/livejs/live.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+
+  </head>
+  <body>
+
+  <nav class="navbar navbar is-fixed-top is-dark is-dark">
+    <div class="container">
+          <div class="navbar-brand">
+              <div class="navbar-burger burger" data-target="navigationForMobile">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+          </div>
+        <div id="navigationForMobile" class="navbar-menu">
+            <div class="navbar-start">
+                  <a class="navbar-item colored" href="index.html"><strong>Home</strong></a>
+                  <a class="navbar-item colored" href="about.html"><strong>About</strong></a>
+              <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link" href="#"><strong>Projects</strong></a>
+              <div class="navbar-dropdown is-boxed">
+                  <a class="navbar-item" href="supportCenter.html">Support Center 3</a>
+                  <a class="navbar-item" href="sylvaBot.html">Sylva Bot</a>
+                  <a class="navbar-item" href="houstonGame.html">Houston Game</a>
+                  <a class="navbar-item" href="mapToolCharacterSheet.html">Maptool Character Sheet</a>
+              </div>
+              </div>
+            </div>
+        </div>
+    </div>
+  </nav>
+
+  <section class="hero is-medium is-dark is-bold">
+    <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-2"></div>
+          <div class="column is-3">
+            <figure class="image is-256x256">
+              <img src=images/ProfessionalPicture.png>
+            </figure>
+          </div>
+          <div class="column is-6">
+            <h1 class="title">Hi, My Name is Daniel</h1>
+            <h2 class="subtitle is-5">I am a self-educated software engineer and I specialize in automation</h2>
+          </div>
+      </div>
+
+      <nav class="level">
+        <div class="level-item"><a class="button is-dark" href="about.html">Want to Know More?</a></div> 
+      </nav>
+    </div>  <!-- Container End -->
+    </div>  <!-- Hero-Body End -->
+    
+  </section>
+
+  <section class="p-t-m p-b-xl dark-section">
+    <div class="container p-b-xl">
+
+        <div class="columns"> <!--This has negative margin on the top...gotta remove it -->
+          <div class="column is-2"></div>
+          <div class="column is-8">
+              <h1 class="title is-4 m-b-xl cent-Text">Project History</h1>
+            <!-- <article class="message is-dark">
+                <div class="message-body">
+                    This is a showcase of my past and current projects. 
+                    <br>Click on any item for more information.
+                    <br>More Recent Projects are at the top 
+
+                    
+                </div>
+            </article> -->
+          </div>
+          <div class="column is-2"></div>
+        </div>
+
+
+        <div class="columns">
+            <div class="column is-1"></div>
+
+          <!-- Card 1 -->
+          <div class="column is-5">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3"><a href="supportCenter.html"> <img src="images/sc3Example1.jpg" alt="Placeholder image">  </a></figure>       
+                </div>
+                    <div class="card-content">
+                      <div class="media">                   
+                        <div class="media-content">
+                          <p class="title is-4">Support Center 3</p>   
+                        </div>
+                      </div>
+                  
+                <div class="content">
+                    This was created at my previous job when their database system was running too slowly. This was only for personal use; I was not considered a programmer in this position.
+                    <br> Built with: <strong> Java</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="column is-5">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3"><a href="sylvaBot.html"> <img src="images/SylvaBotExample.jpg" alt="Placeholder image">  </a></figure>
+              </div>
+                  <div class="card-content">
+                    <div class="media">                   
+                      <div class="media-content">
+                        <p class="title is-4">Sylva Bot</p>   
+                      </div>
+                    </div>
+                
+                <div class="content">
+                    This was a chat moderation bot created for a client and actively updated with requests. It used multiple online services such as Discord, Twitter, Twitch, and others. 
+                  <br>  Built with: <strong> Java</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- Columns 1 End -->
+
+        <div class="columns">
+            <div class="column is-1"></div>
+
+             <!-- Card 3 -->
+             <div class="column is-5">
+                <div class="card">
+              <div class="card-image">
+                  <figure class="image is-4by3"><a href="houstonGame.html"> <img src="images/houstonExample1.jpg" alt="Placeholder image">  </a></figure>
+                </div>
+                      <div class="card-content">
+                        <div class="media">                   
+                          <div class="media-content">
+                            <p class="title is-4">Houston Game</p>   
+                          </div>
+                        </div>
+                    
+                <div class="content">
+                    A simple game in progress made with Unity; the idea is that one player controls a spaceship with basically no instrumentation, while the other player provides instructions over voice from the control center. 
+                 <br>   Built with: <strong> C#</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="column is-5">
+            <div class="card">
+          <div class="card-image">
+              <figure class="image is-4by3"><a href="mapToolCharacterSheet.html"> <img src="images/CharSheetExample1.jpg" alt="Placeholder image">  </a></figure>
+            </div>
+                  <div class="card-content">
+                    <div class="media">                   
+                      <div class="media-content">
+                        <p class="title is-4">Maptool Character Sheet</p>   
+                      </div>
+                    </div>
+                
+                <div class="content">
+                    This is a character sheet designed for an online tabletop simulator. This is worth mentioning only because I managed to get a lot out of a very weak custom programming language that it uses, and it is very interactive. 
+                   <br> Built with: <strong> MaptoolMacro and HTML/CSS</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          </div>  <!-- Columns 2 End -->
+        </div>  <!-- Container End -->
+
+  </section>
+
+  <footer class="footer dark-footer">
+
+    <div class="container">
+
+      <div class="cent-Text">
+        <p class='subtitle'> Contact </p>
+
+        <a href="mailto:Dimencia@gmail.com" class="button is-dark" target="_blank">Send Me an E-mail</a><br>
+        <!-- insert link to linked in inside of href -->
+        <span class="icon m-t-md"><a href="https://www.linkedin.com/in/dimencia/"><i class="fa fa-linkedin"></i></a></span>
+
+
+
+      </div>
+    </div>
+  </footer>
+
+  
+<script src='scripts/main.js'></script>
+
+</body>
+</html>

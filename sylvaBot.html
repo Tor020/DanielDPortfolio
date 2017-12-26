@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Daniel Beaver - Portfolio Project: Houston Game</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="https://tor020.github.io/livejs/live.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar is-fixed-top is-dark">
+
+    <div class="container">
+
+      <div class="navbar-brand">
+
+        <div class="navbar-burger burger" data-target="navigationForMobile">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navigationForMobile" class="navbar-menu">
+
+        <div class="navbar-start">
+          <a class="navbar-item" href="index.html">
+            <strong>Home</strong>
+          </a>
+          <a class="navbar-item" href="about.html">
+            <strong>About</strong>
+          </a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" href="#">
+              <strong>Projects</strong>
+            </a>
+
+            <div class="navbar-dropdown is-boxed">
+              <a class="navbar-item" href="supportCenter.html">Support Center 3</a>
+              <a class="navbar-item" href="sylvaBot.html">Sylva Bot</a>
+              <a class="navbar-item" href="houstonGame.html">Houston Game</a>
+              <a class="navbar-item" href="mapToolCharacterSheet.html">Maptool Character Sheet</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero is-medium is-dark is-bold">
+
+    <div class="hero-body">
+
+      <div class="container">
+
+        <div class="columns">
+
+          <div class="column is-3"></div>
+
+          <div class="column is-6">
+            <h1 class="title cent-Text">Sylva Bot</h1>
+            <h2 class="subtitle is-5 cent-Text">An Interactive IRC & Moderation Bot</h2>
+          </div>
+        </div>
+
+        <div class="columns">
+
+          <div class="column is-2"></div>
+          <!-- Figure out a way to call these tests Tests are a part of modern development, really roundabout ways of saying you made tests for loading scenarios is not a good -->
+
+          <div class="column is-8">
+            <p>This bot was created for a client, after which it was named, who streamed on Twitch - a rather popular video
+              streaming platform. Most of the chat interface for this platform is run on IRC, so most of the internals deal
+              directly with it, but I based this upon an Open Source bot called
+              <a href="http://coebot.tv">CoeBot</a>. That means that all of the backend was already completed, but when Twitch updated their API, I ended up rewriting
+              parts of it anyway.
+            </p>
+            <p>The purpose of this bot was to promote and customize the twitch chat channel; CoeBot already provided all moderation
+              functions for the most part, though I made many custom functions using those. I updated it daily at first,
+              then at least weekly based upon feedback from the client. I proposed my own ideas, which he accepted or rejected,
+              and I implemented anything he asked for. This bot ran on the client's computer since it used graphic elements
+              that he had to broadcast to his stream, i.e. the greenscreen. There was time pressure on this project since
+              we wanted to have the features usable immediately, so in some cases I had to create a temporary solution that
+              was later fixed, such as the GameWisp authentication. I had to log and back-up important information such as
+              'coins', a virtual currency that people took somewhat seriously, and provide resets and triggers that can be
+              used in case something went wrong - as well as error detection and correction when loading/saving.
+            </p>
+            <p>The bot was capable of connecting to Twitch, Twitter, Discord, GameWisp, CleverBot, and even to my own webserver
+              to obtain updates. The client stopped streaming at some point, and development halted, but it is fully functional.
+            </p>
+          </div>
+
+        </div>
+        <!-- <nav class="level"><div class="level-item"></div></nav> -->
+
+
+      </div>
+      <!-- Container End -->
+    </div>
+    <!-- Hero-Body End -->
+
+  </section>
+
+  <section>
+    <hr>
+
+    <div class="columns">
+
+      <div class="column is-2"></div>
+
+      <div class="column is-8">
+
+        <div class="content">
+          <h2>Features</h2>
+          <ul>
+            <li>Interacted through Twitch's IRC protocol; included commands to entertain users and moderate the chat.</li>
+            <li>Interfaced with Discord, Twitter, Cleverbot, GameWisp, and my personal webserver for various uses</li>
+            <li>Included a "Green Screen", a custom image window and animation requested by the client that can be filtered to have a transparent background.</li>
+            <li>Contained complex chat-based functions, such as a raffle for users in the chat, and a full currency system that was used to limit user command execution</li>
+            <li>Used various techniques to prevent users from abusing commands, as well as keeping track of user access levels</li>
+            <li>Able to connect to a host server to automatically retrieve and apply program updates</li>
+          </ul>
+
+
+          <h2>Image or Gif Info</h2>
+          <figure class="image">
+            <img src="images/sylvaBotExample.gif">
+          </figure>
+
+        </div>
+        <!--Content End-->
+      </div>
+      <!--Column is-8 End-->
+    </div>
+    <!--Columns grouping End-->
+
+    <div class="columns">
+
+      <div class="column is-2"></div>
+
+      <div class="column is-8">
+
+        <div class="content">
+          <h2>Challenges</h2>
+          <ul>
+            <li>Twitch's API - This was a challenge mostly because during the time I was working on this, they updated their API extensively. At some points my bot would not connect, or could not chat, and I had to dig through and eventually rewrote some of the the PircBot code, the bot that GeoBot is based on, which CoeBot is based on, which SylvaBot is based on. Whew. At other times, it would create random crashes that I eventually was able to fix, but it took many versions of debugging to find the cause and adjust to fit Twitch's unannounced API changes. And sometimes it wasn't the changes at all, but the API itself - when detecting a new follower or subscriber, the bot must load a page from the twitch API showing a full list. This is no problem, but Twitch's server then caches that request for up to 5 minutes, resulting in delayed responses. I eventually found a way around this by slightly changing the request size on each call to receive an un-cached page.</li>
+            <li>Design Challenges - Once more I ran into a few design challenges; CoeBot was intended to be able to join a large number of channels at once, but this bot was only intended for one. I initially rewrote some of CoeBot's functionality to enforce this, and refactored much of the connection procedure to reflect this. Eventually it was requested to have the bot join another channel for a few minutes at a time and enter a line in chat. Since I had already refactored all of this, I then had to work backwards and find a new way to get this to work - I ended up writing a separate function to jack into the CoeBot commands that I didn't refactor to accomplish this.</li>
+            <li>Live Environment - The bot was always used in a live environment with dozens of users interacting with it. All of its content was displayed on a stream or live chat, so any failures would be reflected live for all viewers to see. I had to perform thorough testing to ensure there were no issues, and the users always seemed to find new ways to break things anyway. I immediately resolved any bugs that appeared, and even created a system where I could remotely push an update in case of emergencies.</li>
+          </ul>
+        </div>
+        <!--Content End-->
+      </div>
+      <!--Column is-8 End-->
+    </div>
+    <!--Columns grouping End-->
+  </section>
+  <hr class="hr-reduce">
+
+  <nav class="level">
+    <p class="level-item has-text-centered">
+      <a href="supportCenter.html" class="link is-info">Support Center 3</a>
+    </p>
+    <p class="level-item has-text-centered">
+      <a href="sylvaBot.html" class="link is-info level-active">Sylva Bot</a>
+    </p>
+    <p class="level-item has-text-centered title is-2">
+      Projects
+    </p>
+    <p class="level-item has-text-centered">
+      <a href="houstonGame.html" class="link is-info">Houston Game</a>
+    </p>
+    <p class="level-item has-text-centered">
+      <a href="mapToolCharacterSheet.html" class="link is-info">Maptool Character Sheet</a>
+    </p>
+  </nav>
+
+  <div class="container">
+
+    <div class="columns">
+
+
+      <!-- Card 1 -->
+
+      <div class="column is-4">
+
+        <div class="card">
+
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <a href="supportCenter.html">
+                <img src="images/sc3Example1.jpg" alt="Placeholder image"> </a>
+            </figure>
+          </div>
+
+          <div class="card-content">
+
+            <div class="media">
+
+              <div class="media-content">
+                <p class="title is-4">Support Center 3</p>
+              </div>
+            </div>
+
+            <div class="content">
+              This was created at my previous job when their database system was running too slowly. This was only for personal use; I
+              was not considered a programmer in this position.
+              <br> Built with:
+              <strong> Java</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2-->
+
+      <div class="column is-4">
+
+        <div class="card">
+
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <a href="houstonGame.html">
+                <img src="images/houstonExample1.jpg" alt="Placeholder image"> </a>
+            </figure>
+          </div>
+
+          <div class="card-content">
+
+            <div class="media">
+
+              <div class="media-content">
+                <p class="title is-4">Houston Game</p>
+              </div>
+            </div>
+
+            <div class="content">
+              A simple game in progress made with Unity; the idea is that one player controls a spaceship with basically no instrumentation,
+              while the other player provides instructions over voice from the control center.
+              <br> Built with:
+              <strong> C#</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+
+      <div class="column is-4">
+
+        <div class="card">
+
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <a href="mapToolCharacterSheet.html">
+                <img src="images/CharSheetExample1.jpg" alt="Placeholder image"> </a>
+            </figure>
+          </div>
+
+          <div class="card-content">
+
+            <div class="media">
+
+              <div class="media-content">
+                <p class="title is-4">Maptool Character Sheet</p>
+              </div>
+            </div>
+
+            <div class="content">
+              This is a character sheet designed for an online tabletop simulator. This is worth mentioning only because I managed to get
+              a lot out of a very weak custom programming language that it uses, and it is very interactive.
+              <br> Built with:
+              <strong> MaptoolMacro and HTML/CSS</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- Columns 2 End -->
+  </div>
+  <!-- Container End -->
+
+  <hr class="hr-reduce">
+
+  <div class="container m-t-xl">
+
+    <div class="columns">
+
+      <div class="column is-2"></div>
+
+      <div class="column is-8 cent-Text">
+        <a class="link-To-About" href="about.html">Read More About Me</a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer m-t-md dark-footer">
+
+    <div class="container">
+
+      <div class="cent-Text">
+        <p class='subtitle'> Contact </p>
+
+        <a href="mailto:Dimencia@gmail.com" class="button is-dark" target="_blank">Send Me an E-mail</a>
+        <br>
+        <!-- insert link to linked in inside of href -->
+        <span class="icon m-t-md"><a href="https://www.linkedin.com/in/dimencia/"><i class="fa fa-linkedin"></i></a></span>
+
+
+
+      </div>
+    </div>
+  </footer>
+
+
+  <script src='scripts/main.js'></script>
+
+</body>
+
+
+</html>

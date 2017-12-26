@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Daniel Beaver - Portfolio Project: Map Tool Character Creator</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="https://tor020.github.io/livejs/live.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar is-fixed-top is-dark">
+
+    <div class="container">
+
+      <div class="navbar-brand">
+
+        <div class="navbar-burger burger" data-target="navigationForMobile">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navigationForMobile" class="navbar-menu">
+
+        <div class="navbar-start">
+          <a class="navbar-item" href="index.html">
+            <strong>Home</strong>
+          </a>
+          <a class="navbar-item" href="about.html">
+            <strong>About</strong>
+          </a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" href="#">
+              <strong>Projects</strong>
+            </a>
+
+            <div class="navbar-dropdown is-boxed">
+              <a class="navbar-item" href="supportCenter.html">Support Center 3</a>
+              <a class="navbar-item" href="sylvaBot.html">Sylva Bot</a>
+              <a class="navbar-item" href="houstonGame.html">Houston Game</a>
+              <a class="navbar-item" href="mapToolCharacterSheet.html">Maptool Character Sheet</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero is-medium is-dark is-bold">
+
+    <div class="hero-body">
+
+      <div class="container">
+
+        <div class="columns">
+
+          <div class="column is-3"></div>
+
+          <div class="column is-6">
+            <h1 class="title cent-Text">Map Tool Character Sheet</h1>
+            <h2 class="subtitle is-5 cent-Text">A Practical Utility</h2>
+          </div>
+        </div>
+
+        <div class="columns">
+
+          <div class="column is-2"></div>
+
+          <div class="column is-8">
+            <p>This is a character sheet I made for use with Pathfinder rules, using Maptool's macro language. This was interesting
+              because the language is very limited; for example, it only allows up to two nested code brackets, which severely
+              limits its usability.</p>
+            <p>Despite this, I managed to get this to display for a player as a frame in their window, with links to roll for
+              saves or abilities, ways to edit them, and the options to apply 'buffs' for common spells. This edits each
+              Maptool Pog directly to store and retrieve information, so it can be used on any Pog with minimal to no setup.
+              Before this, our procedure involved each player creating their own custom macros which would take time and
+              would often result in problems - this solves those problems by using generic functions that can work for any
+              given pog, and asking for user input when data is not found.</p>
+            <p>In addition to the code itself, all display elements such as the frame us HTML and CSS, heavily formatted for
+              readability.</p>
+            <p>I also managed to simplify combat by allowing a player to input data about their 'attacks', which can then be
+              performed on the fly by selecting the tokens to attack. This displays the token's AC (how hard they are to
+              hit), resistances, and immunities. Since most attack procedures involve multiple attacks, the player can then
+              queue up attacks on targets one at a time until they've used up all of their attacks. This is shown to them
+              in an active window where they can edit some of the values - in case there are variables that the sheet is
+              not accounting for.</p>
+              
+              <p> Once they are finished they submit this, which is then sent to the GM or Game Master for
+              approval. The GM sees both the original values and any modifications that were made, and is free to make any
+              further modifications (as GameMaster, the ability to change results without alerting others is invaluable).
+              Once this is approved, a simple table showing the results is output to chat, and the damage is applied to the
+              respective targets as appropriate. This massively simplifies combat, removing the need for players to do math
+              or spam the chat by rolling individually, and the need to add bonuses 'on the fly' when the player's macro
+              didn't include them automatically. This feature is not yet fully implemented as I have not had time to work
+              on this recently, but finishing it will be my next step.</p>
+          </div>
+
+        </div>
+        <!-- <nav class="level"><div class="level-item"></div></nav> -->
+
+
+      </div>
+      <!-- Container End -->
+    </div>
+    <!-- Hero-Body End -->
+
+  </section>
+
+  <section>
+    <hr>
+
+    <div class="columns">
+
+      <div class="column is-2"></div>
+
+      <div class="column is-8">
+
+        <div class="content">
+          <h2>Features</h2>
+          <ul>
+            <li>Uses modular functions to work with any Pog without prior setup</li>
+            <li>Prompts the user for input if data is missing</li>
+            <li>Automatically detects if variables are not initialized and initializes them - this is a live environment so this is not normal for this 'language'</li>
+            <li>Employs clever workarounds for the nesting limits such as building strings using multiple 'macros' (basically functions)</li>
+            <li>Uses HTML and CSS to clearly and neatly display information</li>
+            <li>Customizeable 'attacks' that allow automation of the pathfinder combat system</li>
+            <li>Self-learning Resistances and Immunities - asks player for input if it does not know, but keeps record of all player inputs for future reference</li>
+            <li>Prompts to edit or customize any data on the sheet</li>
+            <li>Created for usability - knowing I could not predict everything in the Pathfinder game, I made sure players can add bonuses and detriments on the fly</li>
+            <li>Very modular - created in such a way that it can apply to any token or pog without prior setup, making a GameMaster's job much easier for creating enemies since they do not need their own macros</li>
+          </ul>
+
+          <h2>Image or Gif Info</h2>
+          <figure class="image">
+            <img src="images/MaptoolExample.gif">
+          </figure>
+
+        </div>
+        <!--Content End-->
+      </div>
+      <!--Column is-8 End-->
+    </div>
+    <!--Columns grouping End-->
+
+    <div class="columns">
+
+      <div class="column is-2"></div>
+
+      <div class="column is-8">
+
+        <div class="content">
+          <h2>Challenges</h2>
+          <ul>
+            <li>Limited Language - The Maptool Macro scripting language is not meant for heavy usage; in order to run most scripts, you must manually increase your memory limit for MapTool via batch file, and nesting is limited to two levels. I found ways to work around this, notably by referencing other macros when I've hit the nesting limit and using their output instead of nesting further. I managed to link a CSS file using this, and create and store variables on the fly to relatively permanently store data. The language's syntax is very demanding, requiring no leading spaces for example, and documentation is not very complete - I had to learn many nuances through trial and error.</li>
+            <li>Actually that's pretty much it, the language is the only reason this is even notable. Seriously though, this language is terrible and I'm amazed I managed to get it to do this. In general most of the language doesn't seem to be made for live interaction - generally it's for either static display of non-changing variables or outputting directly to chat</li>
+            <li>Oh, HTML, I guess - When I began this, I was very new to HTML. I learned to create complex tables, legible formatting, and use CSS with this project.</li>
+          </ul>
+        </div>
+        <!--Content End-->
+      </div>
+      <!--Column is-8 End-->
+    </div>
+    <!--Columns grouping End-->
+  </section>
+  <hr class="hr-reduce">
+
+  <nav class="level">
+    <p class="level-item has-text-centered">
+      <a href ="supportCenter.html" class="link is-info">Support Center 3</a>
+    </p>
+    <p class="level-item has-text-centered">
+      <a href ="sylvaBot.html" class="link is-info">Sylva Bot</a>
+    </p>
+    <p class="level-item has-text-centered title is-2">
+      Projects
+    </p>
+    <p class="level-item has-text-centered">
+      <a href ="houstonGame.html" class="link is-info">Houston Game</a>
+    </p>
+    <p class="level-item has-text-centered">
+      <a href ="mapToolCharacterSheet.html" class="link is-info level-active">Maptool Character Sheet</a>
+    </p>
+  </nav>
+
+  <div class="container">
+
+    <div class="columns">
+
+
+      <!-- Card 1 -->
+
+      <div class="column is-4">
+
+        <div class="card">
+
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <a href="supportCenter.html">
+                <img src="images/sc3Example1.jpg" alt="Placeholder image"> </a>
+            </figure>
+          </div>
+
+          <div class="card-content">
+
+            <div class="media">
+
+              <div class="media-content">
+                <p class="title is-4">Support Center 3</p>
+              </div>
+            </div>
+
+            <div class="content">
+              This was created at my previous job when their database system was running too slowly. This was only for personal use; I
+              was not considered a programmer in this position.
+              <br> Built with:
+              <strong> Java</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 1 -->
+
+      <div class="column is-4">
+
+        <div class="card">
+
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <a href="sylvaBot.html">
+                <img src="images/SylvaBotExample.jpg" alt="Placeholder image"> </a>
+            </figure>
+          </div>
+
+          <div class="card-content">
+
+            <div class="media">
+
+              <div class="media-content">
+                <p class="title is-4">Sylva Bot</p>
+              </div>
+            </div>
+
+            <div class="content">
+              This was a chat moderation bot created for a client and actively updated with requests. It used multiple online services
+              such as Discord, Twitter, Twitch, and others.
+              <br> Built with:
+              <strong> Java</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2-->
+
+      <div class="column is-4">
+
+        <div class="card">
+
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <a href="houstonGame.html">
+                <img src="images/houstonExample1.jpg" alt="Placeholder image"> </a>
+            </figure>
+          </div>
+
+          <div class="card-content">
+
+            <div class="media">
+
+              <div class="media-content">
+                <p class="title is-4">Houston Game</p>
+              </div>
+            </div>
+
+            <div class="content">
+              A simple game in progress made with Unity; the idea is that one player controls a spaceship with basically no instrumentation,
+              while the other player provides instructions over voice from the control center.
+              <br> Built with:
+              <strong> C#</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+
+
+    </div>
+    <!-- Columns 2 End -->
+  </div>
+  <!-- Container End -->
+
+  <hr class="hr-reduce">
+
+  <div class="container m-t-xl">
+
+    <div class="columns">
+
+      <div class="column is-2"></div>
+
+      <div class="column is-8 cent-Text"><a class="link-To-About" href="about.html">Read More About Me</a></div>
+
+    </div>
+  </div>
+
+  <footer class="footer m-t-md dark-footer">
+
+    <div class="container">
+
+      <div class="cent-Text">
+        <p class='subtitle'> Contact </p>
+
+        <a href="mailto:Dimencia@gmail.com" class="button is-dark" target="_blank">Send Me an E-mail</a><br>
+        <!-- insert link to linked in inside of href -->
+        <span class="icon m-t-md"><a href="https://www.linkedin.com/in/dimencia/"><i class="fa fa-linkedin"></i></a></span>
+
+
+
+      </div>
+    </div>
+  </footer>
+
+
+  <script src='scripts/main.js'></script>
+
+</body>
+
+</html>
